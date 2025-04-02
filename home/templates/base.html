@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+</head>
+<body>
+
+<div class="container">
+  <header class="p-3 bg-black text-light">
+My awesome To Do List App
+  </header>
+  <section class="row">
+    <nav class="col-3">
+      <ul>
+        <li>
+          <a href="{% url 'homepage' %}">Home</a>
+        </li>
+        <li>
+          <a href="{% url 'add-task' %}">Add Task</a>
+        </li>
+      </ul>
+    </nav>
+    <main  class="col-9">
+      {% block content %}
+      
+      {% endblock %}
+    </main>
+  </section>
+
+</div>
+</body>
+</html>
